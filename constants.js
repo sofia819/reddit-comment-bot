@@ -1,6 +1,6 @@
 const COMMAND_PREFIX = "!rq";
 
-const MIN_KEYWORD_LENGTH = 4;
+const MIN_KEYWORD_LENGTH = 3;
 
 const DAYS_TO_SEARCH = 7;
 
@@ -12,6 +12,8 @@ const MAX_COMMENT_LENGTH = 500;
 
 const FIFTEEN_MINUTES = 900000;
 
+const EN_REGEX = /\w+|"[^"]+"/g;
+
 module.exports = {
   COMMAND_PREFIX,
   MIN_KEYWORD_LENGTH,
@@ -19,5 +21,6 @@ module.exports = {
   S_TO_MS,
   MIN_SCORE,
   MAX_COMMENT_LENGTH,
-  FIFTEEN_MINUTES
+  FIFTEEN_MINUTES,
+  EN_REGEX
 };
