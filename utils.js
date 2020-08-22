@@ -3,6 +3,7 @@ const {
   DAYS_TO_SEARCH,
   S_TO_MS,
   MIN_SCORE,
+  MAX_COMMENT_LENGTH,
 } = require("./constants");
 
 const splitargs = require("splitargs");
@@ -24,7 +25,7 @@ const getIsNSFW = () => (getRandomNumber(1) ? "on" : "off");
 
 const formatApiEndpoint = (keyword) => {
   const timeAfter = getDateForSearch();
-  return `https://api.pushshift.io/reddit/search?q=${keyword}&after=${timeAfter}&score=>${MIN_SCORE}`;
+  return `https://api.pushshift.io/reddit/search?q="${keyword}"&after=${timeAfter}&score=>${MIN_SCORE}`;
 };
 
 // Separate the arguments from the command prefix and filter out words that are too short
@@ -33,9 +34,24 @@ const filterArgs = ({ content }) =>
     .splice(1)
     .filter((word) => word.length >= MIN_KEYWORD_LENGTH);
 
+const filterResults = (results, keyword) => {
+  const filteredResults = results.filter(
+    ({ body }) => body.length < MAX_COMMENT_LENGTH && body.includes(keyword)
+  );
+  return filteredResults;
+};
+
+const printLog = (keyword, result) => {
+  console.log(keyword);
+  console.log(`[${result.subreddit}]: ${result.permalink}`);
+  console.log(result.body);
+};
+
 module.exports = {
   formatApiEndpoint,
   getRandomNumber,
   getRandomElement,
   filterArgs,
+  filterResults,
+  printLog,
 };
