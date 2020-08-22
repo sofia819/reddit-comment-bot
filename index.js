@@ -27,7 +27,10 @@ client.on("message", async (message) => {
             ({ body }) => body.length < MAX_COMMENT_LENGTH
           );
           if (filteredResults.length > 0) {
-            message.channel.send(getRandomElement(filteredResults).body);
+            const result = getRandomElement(filteredResults);
+            console.log(keyword);
+            console.log(result);
+            message.channel.send(result.body);
           }
         });
     }

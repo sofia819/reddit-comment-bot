@@ -29,7 +29,7 @@ const formatApiEndpoint = (keyword) => {
 
 // Separate the arguments from the command prefix and filter out words that are too short
 const filterArgs = ({ content }) =>
-  splitargs(content)
+  splitargs(content.replace(/["“‘”]/g, "'"))
     .splice(1)
     .filter((word) => word.length >= MIN_KEYWORD_LENGTH);
 

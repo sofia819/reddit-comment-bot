@@ -2,13 +2,13 @@ const COMMAND_PREFIX = "!rq";
 
 const MIN_KEYWORD_LENGTH = 3;
 
-const DAYS_TO_SEARCH = 7;
+const DAYS_TO_SEARCH = 30;
 
 const S_TO_MS = 1000;
 
 const MIN_SCORE = 10;
 
-const MAX_COMMENT_LENGTH = 500;
+const MAX_COMMENT_LENGTH = 800;
 
 const FIFTEEN_MINUTES = 900000;
 
