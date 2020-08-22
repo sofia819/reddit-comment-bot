@@ -10,6 +10,8 @@ const MIN_SCORE = 10;
 
 const MAX_COMMENT_LENGTH = 500;
 
+const FIFTEEN_MINUTES = 900000;
+
 module.exports = {
   COMMAND_PREFIX,
   MIN_KEYWORD_LENGTH,
@@ -17,4 +19,5 @@ module.exports = {
   S_TO_MS,
   MIN_SCORE,
   MAX_COMMENT_LENGTH,
+  FIFTEEN_MINUTES
 };

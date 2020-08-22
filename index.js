@@ -3,7 +3,11 @@ const Discord = require("discord.js");
 const fetch = require("node-fetch");
 const client = new Discord.Client();
 const { formatApiEndpoint, getRandomElement, filterArgs } = require("./utils");
-const { COMMAND_PREFIX, MAX_COMMENT_LENGTH } = require("./constants");
+const {
+  COMMAND_PREFIX,
+  MAX_COMMENT_LENGTH,
+  FIFTEEN_MINUTES,
+} = require("./constants");
 
 client.once("ready", () => {
   console.log("DPS Bot is ready!");
@@ -28,4 +32,10 @@ client.on("message", async (message) => {
         });
     }
   }
+});
+
+client.on("ready", () => {
+  setInterval(() => {
+    console.log("It has been 15 minutes");
+  }, FIFTEEN_MINUTES);
 });

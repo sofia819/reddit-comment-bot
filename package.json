@@ -4,16 +4,14 @@
   "description": "Pick a random FFXIV quote from a random keyword",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dblapi.js": "^2.4.1",
     "discord.js": "^12.3.1",
     "dotenv": "^8.2.0",
     "node-fetch": "^2.6.0",
-    "wretch": "^1.7.2",
     "xivapi-js": "^0.3.0"
   }
 }
