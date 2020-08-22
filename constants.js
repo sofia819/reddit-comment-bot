@@ -1,0 +1,20 @@
+const COMMAND_PREFIX = "!rq";
+
+const MIN_KEYWORD_LENGTH = 4;
+
+const DAYS_TO_SEARCH = 7;
+
+const S_TO_MS = 1000;
+
+const MIN_SCORE = 10;
+
+const MAX_COMMENT_LENGTH = 500;
+
+module.exports = {
+  COMMAND_PREFIX,
+  MIN_KEYWORD_LENGTH,
+  DAYS_TO_SEARCH,
+  S_TO_MS,
+  MIN_SCORE,
+  MAX_COMMENT_LENGTH,
+};
