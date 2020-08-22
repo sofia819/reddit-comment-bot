@@ -12,6 +12,7 @@
     "discord.js": "^12.3.1",
     "dotenv": "^8.2.0",
     "node-fetch": "^2.6.0",
+    "splitargs": "0.0.7",
     "xivapi-js": "^0.3.0"
   }
 }

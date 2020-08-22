@@ -3,8 +3,9 @@ const {
   DAYS_TO_SEARCH,
   S_TO_MS,
   MIN_SCORE,
-  EN_REGEX,
 } = require("./constants");
+
+const splitargs = require("splitargs");
 
 const getRandomNumber = (max) =>
   Math.floor(Math.random() * Math.floor(max + 1));
@@ -28,8 +29,7 @@ const formatApiEndpoint = (keyword) => {
 
 // Separate the arguments from the command prefix and filter out words that are too short
 const filterArgs = ({ content }) =>
-  content
-    .match(EN_REGEX)
+  splitargs(content)
     .splice(1)
     .filter((word) => word.length >= MIN_KEYWORD_LENGTH);
 
